@@ -8,3 +8,8 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task :default => :test
+
+Rake::TestTask.new(:bench) do |t|
+  t.libs = %w(lib test)
+  t.pattern = 'test/**/*_benchmark.rb'
+end
